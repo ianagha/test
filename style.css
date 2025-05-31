@@ -41,7 +41,10 @@ h2 {
     transition: .3s ease;
     color: rgb(16, 16, 20)
 }
-img
+img{
+    border: solid 1px transparent;
+    border-radius:200px;
+}
 img:hover {
     transition: .2s  ease;
     transform: scale(90%)
