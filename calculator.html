@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Calculator</title>
+    <style>
+        .calc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .calc label {
+            margin: 5px;
+        }
+
+        .calc input {
+            margin: 5px;
+            border-radius: 3px;
+        }
+
+        .calc button {
+            margin: 6px;
+            border: solid 2px black;
+            border-radius: 10px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form action="" class="calc">
+            <h1>Calculator</h1>
+            <label>Enter the first number</label>
+            <input type="number" id="n1">
+            <br>
+            <label>Enter the second number</label>
+            <input type="number" id="n2">
+            <br>
+            <p>select operation:</p>
+            <select name="" id="operation">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">x</option>
+                <option value="/">/</option>
+            </select>
+            <br>
+
+            <button onclick="calc()">Calculate</button>
+
+            <h2>Result: <span id="ans"> </span></h2>
+
+        </form>
+    </div>
+
+    <!-- script -->
+    <script>
+        // let for loop
+        // const for constsnt Value
+        // var for veriable
+
+
+        // console.log(num1+" "+op+" "+num2);
+
+        function calc() {
+            let num1 = document.getElementById("n1").value;
+            let num2 = document.getElementById("n2").value;
+            let op = document.getElementById("operation").value
+            var result;
+            if (op == '+') {
+                result = parseInt(num1) + parseInt(num2);
+            }
+            else if (op == '-') {
+                result = parseInt(num1) - parseInt(num2);
+            }
+            else if (op == '*') {
+                result = parseInt(num1) * parseInt(num2);
+            }
+            else {
+                result = parseInt(num1) / parseInt(num2);
+            }
+            
+            document.getElementById("ans").innerText = result;
+            event.preventDefault();
+        }
+    </script>
+</body>
+
+</html>
